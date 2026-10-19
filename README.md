@@ -51,18 +51,13 @@ Format response dari worker (yang diteruskan broker ke client):
 }
 ```
 
-Cara Menjalankan (Lokal)
 
-1. Clone repo:
 
-   git clone https://github.com/Hendrasetyawan1945/load-balancing.git
-   cd load-balancing
-
-2. Menjalankan simulasi lengkap (otomatis menyalakan worker & broker dan mengirim request contoh):
+1. Menjalankan simulasi lengkap (otomatis menyalakan worker & broker dan mengirim request ):
 
    python simulate.py
 
-3. Menjalankan komponen secara manual:
+2. Menjalankan komponen secara manual:
 
    - Jalankan 3 worker di terminal terpisah:
      - python worker.py --id 1 --port 5001
@@ -75,12 +70,4 @@ Cara Menjalankan (Lokal)
    - Kirim request dari client:
      - python client.py --broker-port 5000 --app-id SHORT --payload "Halo" --count 1
 
-Catatan dan Rekomendasi
 
-- Protokol sederhana diimplementasikan pada berkas `protocol.py`: JSON newline-delimited. Ini mempermudah parsing stream TCP tanpa framing binary.
-- Saat menjalankan di Windows/Unix, gunakan `python` atau `python3` sesuai environment Anda.
-- Saya dapat menambahkan README lebih rinci, contoh output, atau file `.gitignore`/`LICENSE` jika Anda mau.
-
-Lisensi
-
-Tambahkan lisensi jika diperlukan (mis. MIT) — beri tahu saya jika Anda ingin saya menambahkan berkas `LICENSE`.
